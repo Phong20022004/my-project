@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>Đăng Nhập</title>
+</head>
+<body>
+    <h1>ĐĂNG NHẬP</h1>
+
+    {% if error %}
+        <p style="color: red; font-weight: bold;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" name="username" required />
+        <br><br>
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required />
+        <br><br>
+        <button type="submit">ĐĂNG NHẬP</button>
+    </form>
+</body>
+</html>

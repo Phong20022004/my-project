@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<headL>
+    <meta charset="UTF-8" />
+    <title>Trang Chủ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 15px;
+            border: 3px solid #555;
+        }
+        .video-player {
+            width: 420px;
+            height: 240px;
+            margin: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        a.logout {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        a.logout:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</headL
+<body>
+    <h1>Chào Mừng Người Anh Em Đã Quay Trở Lại!</h1>
+
+    <div class="container">
+        <!-- 2 ảnh cá nhân -->
+        <img src="{{ url_for('static', filename='images/profile1.jpg') }}" alt="Ảnh 1" class="profile-img">
+        <img src="{{ url_for('static', filename='images/profile2.jpg') }}" alt="Ảnh 2" class="profile-img">
+    </div>
+
+    <div class="container">
+        <!-- 2 video -->
+        <video controls class="video-player">
+            <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+            Trình duyệt không hỗ trợ video.
+        </video>
+        <video controls class="video-player">
+            <source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4">
+            Trình duyệt không hỗ trợ video.
+        </video>
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="logout">Đăng xuất</a>
+</body>
+</html>
